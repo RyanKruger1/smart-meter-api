@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>smart_meter.api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\smart-meter.application\smart-meter.application.csproj" />
+    <ProjectReference Include="..\smart-meter.domain\smart-meter.domain.csproj" />
+    <ProjectReference Include="..\smart-meter.infrasturcture\smart-meter.infrasturcture.csproj" />
+  </ItemGroup>
+
+</Project>
