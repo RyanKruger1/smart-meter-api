@@ -1,18 +1,22 @@
 version: '3.8'
 services:
-  mongodb:
-    image: mongo
+  amidb:
+    image: mongo:latest
     ports:
       - 27017:27017
     volumes:
       - mongodb-data:/data/db
-
-  myapp:
+   
+  sm1:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     depends_on:
-      - mongodb
+      - amidb
+    ports:
+      - 8901:80
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
 
 volumes:
   mongodb-data:
