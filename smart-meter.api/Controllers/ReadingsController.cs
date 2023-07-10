@@ -16,11 +16,21 @@ namespace smart_meter.api.Controllers
             _readingService = readingService;
         }
 
-        [HttpPost(Name = "recordReading")]
-        public IActionResult CreateSmartMeter(Reading r)
+        [HttpPost("{id}")]
+        public IActionResult CreateSmartMeter(ReadingRequestModel reading, Guid id)
         {
-            _readingService.saveReading(r);
-            return Ok(r);
+            Reading applicationReading = new Reading();
+
+            applicationReading.smartMeterId = id;
+            applicationReading.readingTime = DateTime.Now;
+            applicationReading.current = reading.current;
+            applicationReading.voltage = reading.voltage;
+            applicationReading.power = reading.power;
+            applicationReading.powerFactor = reading.powerFactor;
+
+
+            _readingService.saveReading(applicationReading);
+            return Ok(applicationReading);
         }
 
         [HttpGet("{id}")]
