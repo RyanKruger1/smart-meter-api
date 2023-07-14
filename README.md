@@ -6,4 +6,4 @@ This project showcases the interoperability of IoT and IEC6180. IEC 61850 is an 
 Consists of three parts:
 1) Smart-Meter API (.NET, REST)
 2) Smart-Meter Residential Client (python, REST)
-3) Smart-Meter Substation Client (python, IEC61850 - MMS)
+3) IEC61850 MMS Server and Client (MMS - IEC61850, Java)
