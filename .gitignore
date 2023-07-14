@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+#------------------------------------------------------- Java Client ----------------------------------------------------------
+# Gradle
+iec61850bean/.gradle/
+iec61850bean/build/
+iec61850bean/gradle.properties
+
+# IntelliJ IDEA
+iec61850bean/.idea
+iec61850bean/out/
+
