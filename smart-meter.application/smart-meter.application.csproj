@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\smart-meter.domain\smart-meter.domain.csproj" />
+    <ProjectReference Include="..\smart-meter.infrasturcture\smart-meter.infrasturcture.csproj" />
   </ItemGroup>
 
 </Project>

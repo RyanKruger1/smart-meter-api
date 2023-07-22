@@ -13,25 +13,7 @@
  */
 package com.beanit.iec61850bean.app;
 
-import com.beanit.iec61850bean.BasicDataAttribute;
-import com.beanit.iec61850bean.BdaBoolean;
-import com.beanit.iec61850bean.BdaFloat32;
-import com.beanit.iec61850bean.BdaFloat64;
-import com.beanit.iec61850bean.BdaInt16;
-import com.beanit.iec61850bean.BdaInt16U;
-import com.beanit.iec61850bean.BdaInt32;
-import com.beanit.iec61850bean.BdaInt32U;
-import com.beanit.iec61850bean.BdaInt64;
-import com.beanit.iec61850bean.BdaInt8;
-import com.beanit.iec61850bean.BdaInt8U;
-import com.beanit.iec61850bean.Fc;
-import com.beanit.iec61850bean.ModelNode;
-import com.beanit.iec61850bean.SclParseException;
-import com.beanit.iec61850bean.SclParser;
-import com.beanit.iec61850bean.ServerEventListener;
-import com.beanit.iec61850bean.ServerModel;
-import com.beanit.iec61850bean.ServerSap;
-import com.beanit.iec61850bean.ServiceError;
+import com.beanit.iec61850bean.*;
 import com.beanit.iec61850bean.internal.cli.Action;
 import com.beanit.iec61850bean.internal.cli.ActionException;
 import com.beanit.iec61850bean.internal.cli.ActionListener;
@@ -90,12 +72,34 @@ public class ConsoleServer {
     List<ServerModel> serverModels = null;
     try {
       serverModels = SclParser.parse(modelFileParam.getValue());
+
+      System.out.println("==================================================== HERE ======================================================================");
+      System.out.println(serverModels);
     } catch (SclParseException e) {
       System.out.println("Error parsing SCL/ICD file: " + e.getMessage());
       return;
     }
 
-    serverSap = new ServerSap(102, 0, null, serverModels.get(0), null);
+    // ========================================================================== Creating the new model ===================================
+    List<LogicalDevice> childCopies = new ArrayList<>();
+    List<DataSet> dataSetCopies = new ArrayList<>();
+
+    for (ServerModel model: serverModels) {
+      for (ModelNode childNode : model.children.values()) {
+        childCopies.add((LogicalDevice) childNode.copy());
+      }
+
+      for (DataSet dataSet : model.dataSets.values()) {
+        dataSetCopies.add(dataSet);
+      }
+    }
+
+    // ========================================================================== Creating the new model ===================================
+
+    ServerModel mainModel = new ServerModel(childCopies , dataSetCopies);
+
+    serverSap = new ServerSap(102, 0, null, mainModel, null);
+
     serverSap.setPort(portParam.getValue());
 
     Runtime.getRuntime()
@@ -145,7 +149,6 @@ public class ConsoleServer {
         switch (actionKey) {
           case PRINT_SERVER_MODEL_KEY:
             System.out.println("** Printing model.");
-
             System.out.println(serverModel);
 
             break;

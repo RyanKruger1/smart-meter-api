@@ -61,7 +61,7 @@ public class ClientGui extends JFrame implements ActionListener, TreeSelectionLi
   private static final long serialVersionUID = -1938913902977758367L;
 
   private final JTextField ipTextField = new JTextField("127.0.0.1");
-  private final JTextField portTextField = new JTextField("10002");
+  private final JTextField portTextField = new JTextField("102");
   private final JTree tree = new JTree(new DefaultMutableTreeNode("No server connected"));
   private final JPanel detailsPanel = new JPanel();
   private final GridBagLayout detailsLayout = new GridBagLayout();

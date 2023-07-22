@@ -49,6 +49,7 @@ public class SclParser {
   private Document doc;
   private String iedName;
   private List<ServerModel> serverModels = new ArrayList<>();
+  private ServerModel bigModel = null;
   private boolean useResvTmsAttributes = false;
 
   private SclParser() {}
@@ -185,6 +186,8 @@ public class SclParser {
 
     return serverSap;
   }
+
+  // Server Model Creation
 
   private ServerModel createServerModel(Node serverXMLNode) throws SclParseException {
 
