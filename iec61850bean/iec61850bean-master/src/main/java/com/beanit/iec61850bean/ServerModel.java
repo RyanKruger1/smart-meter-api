@@ -27,7 +27,7 @@ import java.util.Map;
 
 public final class ServerModel extends ModelNode {
 
-  private final Map<String, DataSet> dataSets = new LinkedHashMap<>();
+  public final Map<String, DataSet> dataSets = new LinkedHashMap<>();
 
   private final Map<String, Urcb> urcbs = new HashMap<>();
   private final Map<String, Brcb> brcbs = new HashMap<>();
@@ -58,6 +58,7 @@ public final class ServerModel extends ModelNode {
     }
   }
 
+
   @Override
   public ServerModel copy() {
     List<LogicalDevice> childCopies = new ArrayList<>(children.size());
@@ -72,6 +73,7 @@ public final class ServerModel extends ModelNode {
 
     return new ServerModel(childCopies, dataSetCopies);
   }
+
 
   /**
    * Get the data set with the given reference. Return null if none is found.

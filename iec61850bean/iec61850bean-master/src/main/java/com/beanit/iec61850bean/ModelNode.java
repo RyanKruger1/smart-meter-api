@@ -30,7 +30,7 @@ import java.util.Map;
 public abstract class ModelNode implements Iterable<ModelNode> {
 
   protected ObjectReference objectReference;
-  protected Map<String, ModelNode> children;
+  public Map<String, ModelNode> children;
   ModelNode parent;
 
   /**
