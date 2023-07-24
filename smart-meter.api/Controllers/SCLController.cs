@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using smart_meter.api.RequestModels;
+using smart_meter.application.Service;
+using smart_meter.domain.Interfaces;
 using smart_meter.domain.Interfaces.Services;
 using smart_meter.domain.models;
 using smart_meter.infrasturcture.FileSystem;
@@ -11,18 +13,17 @@ namespace smart_meter.api.Controllers
     [Route("[controller]")]
     public class SCLController : ControllerBase
     {
-        IReadingService _readingService;
+        SCLService service;
 
-        public SCLController(IReadingService readingService)
+        public SCLController(ISmartMeterRepository _smRepo)
         {
-            _readingService = readingService;
+            service = new SCLService(_smRepo);
         }
 
         [HttpGet]
         public ActionResult GetAllSmartMeters()
         {
-            XMLWriter xml = new XMLWriter();
-            xml.saveDocument();
+            service.creatsSclFile();
             return Ok();
         }
     }

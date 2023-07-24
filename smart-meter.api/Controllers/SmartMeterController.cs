@@ -36,9 +36,17 @@ namespace smart_meter.api.Controllers
             smartMeter.name = applicationModel.name;
             smartMeter.Id = guid;
             smartMeter.location = applicationModel.location;
+            smartMeter.zipCode = applicationModel.zipCode;
 
-             _smartMeterService.createSmartMeter(smartMeter);
+            _smartMeterService.createSmartMeter(smartMeter);
             return Ok(smartMeter);
+        }
+
+        [HttpDelete(Name = "deleteSmartMeter")]
+        public IActionResult deleteSmartMeter(Guid id)
+        {
+            _smartMeterService.deleteSmartMeter(id);
+            return NoContent();
         }
     }
 }

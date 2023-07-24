@@ -13,5 +13,6 @@ namespace smart_meter.domain.Interfaces.Services
         public SmartMeter getSmartMeter(Guid id);
         public IList<SmartMeter> GetAllSmartMeters();
         public void updateSmartMeter(Guid id, SmartMeter smartMeter);
+        public void deleteSmartMeter(Guid id);
     }
 }

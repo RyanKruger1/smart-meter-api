@@ -37,5 +37,8 @@ namespace smart_meter.infrasturcture.Persistence.Repositories
 
         public void updateSmartMeter(SmartMeter smartMeter) =>
         _meterStore.ReplaceOne(x => x.Id == smartMeter.Id, smartMeter);
+
+        public void deleteSmartMeter(Guid id) =>
+       _meterStore.DeleteOne(x => x.Id == id);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using smart_meter.domain.CommonDataClasses;
 using smart_meter.domain.IEDData;
+using smart_meter.domain.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,9 @@ namespace smart_meter.infrasturcture.FileSystem
 
         XmlDocument xml = new XmlDocument();
 
-        public XMLWriter()
-        {
-         
-        }
+        public IList<SmartMeter> nodes { get; set; }
 
-        public void saveDocument()
+        public void CreateSCLFile(String name)
         {
            
             XmlNamespaceManager nsManager = new XmlNamespaceManager(xml.NameTable);
@@ -60,18 +58,15 @@ namespace smart_meter.infrasturcture.FileSystem
             substationElement.AppendChild(sDesc);
             rootElement.AppendChild(substationElement);
 
-            rootElement.AppendChild(IEDConstructor.CreateSmartMeterXML(xml,"SM1"));
+            foreach (SmartMeter sm in nodes)
+            {
+                rootElement.AppendChild(IEDConstructor.CreateSmartMeterXML(xml, "SM-"+sm.Id));
+            }
+
             rootElement.AppendChild(DataTypesConstructor.CreateDataTypesXML(xml));
 
            
-            xml.Save("../virtual-substation.scd");
-        }
-
-        public XmlElement createSmartMeter(String name)
-        {
-
-
-            return null;
+            xml.Save("../"+name+".scd");
         }
 
         public XmlElement generateHistory()
