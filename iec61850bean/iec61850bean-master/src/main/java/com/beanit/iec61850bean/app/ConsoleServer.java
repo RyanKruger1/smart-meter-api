@@ -73,18 +73,20 @@ public class ConsoleServer {
     try {
       serverModels = SclParser.parse(modelFileParam.getValue());
 
-      System.out.println("==================================================== HERE ======================================================================");
+      System.out.println(
+          "==================================================== HERE ======================================================================");
       System.out.println(serverModels);
     } catch (SclParseException e) {
       System.out.println("Error parsing SCL/ICD file: " + e.getMessage());
       return;
     }
 
-    // ========================================================================== Creating the new model ===================================
+    // ========================================================================== Creating the new
+    // model ===================================
     List<LogicalDevice> childCopies = new ArrayList<>();
     List<DataSet> dataSetCopies = new ArrayList<>();
 
-    for (ServerModel model: serverModels) {
+    for (ServerModel model : serverModels) {
       for (ModelNode childNode : model.children.values()) {
         childCopies.add((LogicalDevice) childNode.copy());
       }
@@ -94,9 +96,10 @@ public class ConsoleServer {
       }
     }
 
-    // ========================================================================== Creating the new model ===================================
+    // ========================================================================== Creating the new
+    // model ===================================
 
-    ServerModel mainModel = new ServerModel(childCopies , dataSetCopies);
+    ServerModel mainModel = new ServerModel(childCopies, dataSetCopies);
 
     serverSap = new ServerSap(102, 0, null, mainModel, null);
 
