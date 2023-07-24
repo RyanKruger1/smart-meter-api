@@ -20,10 +20,12 @@ namespace smart_meter.domain.CommonDataClasses
 
             xmlDocument.AppendChild(AnalogueValue.CreateXmlDataTypes(doc));
             xmlDocument.AppendChild(DPL_Full.CreateXmlDataTypes(doc));
+            xmlDocument.AppendChild(DPC.CreateXmlDataTypes(doc));
             xmlDocument.AppendChild(ENC_Mod_direct.CreateXmlDataTypes(doc));
             xmlDocument.AppendChild(ENS_Beh.CreateXmlDataTypes(doc));
             xmlDocument.AppendChild(ENS_Health.CreateXmlDataTypes(doc));
             xmlDocument.AppendChild(ENS_BehaviourModeKind.CreateXMlDataTypes(doc));
+            xmlDocument.AppendChild(ENS_SwitchFunctionKind.CreateXmlDataTypes(doc));
             xmlDocument.AppendChild(INS.CreateXmlDataTypes(doc));
             xmlDocument.AppendChild(INS_noSVnoBL.CreateXmlDataTypes(doc));
             xmlDocument.AppendChild(LPL_LD2007.CreateXmlDataTypes(doc));

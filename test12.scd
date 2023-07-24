@@ -2,14 +2,518 @@
 <SCL revision="B" version="2007" xmlns="http://www.iec.ch/61850/2003/SCL" schemaLocation="http://www.iec.ch/61850/2003/SCL SCL.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Header id="SCL_Header" version="SCL_Header" revision="0" toolID="smart-meter-api">
     <History>
-      <Hitem version="1" revision="0" when="2023/07/23 09:17:35" who="Ryan Kruger" what="Ryan Kruger" />
+      <Hitem version="1" revision="0" when="2023/07/22 17:10:13" who="Ryan Kruger" what="Ryan Kruger" />
     </History>
   </Header>
   <Substation>
     <name>virtual smart meter substation</name>
     <desc>virtual smart meter substation</desc>
   </Substation>
+  <IED name="SM-21cd304e-b0a2-4d9f-ad26-89f314771125" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-915d6a26-8178-42be-a6b4-66cfa02d383c" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-c963e509-f388-482d-8d64-08a51e0806cc" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-f4d352c6-dbe5-485e-840d-2e03e8801372" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-af2228f3-add4-45f7-963d-e52c8eac7893" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-dae188cf-6378-46ca-8e60-27fbca7bb384" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-ff28871c-6db6-41d0-92bf-18f581dd3004" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-8965e7fb-7213-468c-aa64-3ac1d455bc7a" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-2ede6f05-bd95-4bdc-9764-4b9d4fd17b2b" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-296a9e8a-8788-409c-872b-4597aada0977" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-30d5be77-cca9-4c14-8a20-d94cda3ac305" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-959fc9cd-f001-4132-a7b5-17d2190de895" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
   <IED name="SM-0e29ab93-08ad-4992-9e11-147a33c043f6" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-08c62470-3431-407b-99e2-5adf3c72dd9d" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
+    <AccessPoint name="AP">
+      <Server>
+        <LDevice inst="CTRL">
+          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
+          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
+          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
+          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
+          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
+        </LDevice>
+      </Server>
+    </AccessPoint>
+    <Services nameLength="64">
+      <DynAssociation max="10" />
+      <ConfLogControl max="10" />
+      <GOOSE max="10" />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <SetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet max="100" maxAttributes="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
+      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
+      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+    </Services>
+  </IED>
+  <IED name="SM-c65ffde1-30db-4a2b-aab6-6b25b89e4b22" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
     <AccessPoint name="AP">
       <Server>
         <LDevice inst="CTRL">
@@ -262,42 +766,6 @@
     </Services>
   </IED>
   <IED name="SM-f44f550a-3b08-482d-aa24-6a585286261e" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
-    <AccessPoint name="AP">
-      <Server>
-        <LDevice inst="CTRL">
-          <LN lnType="LLN0_2007" lnClass="LLN0" inst="" prefix="" />
-          <LN lnType="LPHD_TYPE" lnClass="LPHD" inst="1" prefix="" />
-          <LN lnType="MMXN_TYPE" lnClass="MMXN" inst="1" prefix="" />
-          <LN lnType="CSWI_TYPE" lnClass="CSWI" inst="1" prefix="" />
-          <LN lnType="XSWI_TYPE" lnClass="XSWI" inst="1" prefix="" />
-        </LDevice>
-      </Server>
-    </AccessPoint>
-    <Services nameLength="64">
-      <DynAssociation max="10" />
-      <ConfLogControl max="10" />
-      <GOOSE max="10" />
-      <GetDirectory />
-      <GetDataObjectDefinition />
-      <DataObjectDirectory />
-      <GetDataSetValue />
-      <SetDataSetValue />
-      <DataSetDirectory />
-      <ConfDataSet modify="true" maxAttributes="50" max="50" />
-      <DynDataSet max="100" maxAttributes="50" />
-      <ReadWrite />
-      <ConfReportControl bufConf="true" bufMode="both" max="50" />
-      <GetCBValues />
-      <ReportSettings rptID="Dyn" trgOps="Dyn" intgPd="Dyn" optFields="Dyn" cbName="Conf" datSet="Dyn" bufTime="Dyn" resvTms="true" owner="true" />
-      <LogSettings trgOps="Dyn" intgPd="Dyn" datSet="Dyn" logEna="Dyn" />
-      <GSESettings appID="Dyn" dataLabel="Dyn" datSet="Dyn" cbName="Conf" />
-      <FileHandling />
-      <ConfLNs fixPrefix="true" />
-      <ConfLdName />
-      <ConfSigRef max="100" />
-    </Services>
-  </IED>
-  <IED name="SM-a87afd3a-5238-470c-84c4-8762b9b13545" manufacturer="smart-meter-api" configVersion="1.0" originalSclRevision="B" originalSclVersion="2007">
     <AccessPoint name="AP">
       <Server>
         <LDevice inst="CTRL">
