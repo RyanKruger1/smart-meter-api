@@ -58,7 +58,6 @@ public final class ServerModel extends ModelNode {
     }
   }
 
-
   @Override
   public ServerModel copy() {
     List<LogicalDevice> childCopies = new ArrayList<>(children.size());
@@ -73,7 +72,6 @@ public final class ServerModel extends ModelNode {
 
     return new ServerModel(childCopies, dataSetCopies);
   }
-
 
   /**
    * Get the data set with the given reference. Return null if none is found.
