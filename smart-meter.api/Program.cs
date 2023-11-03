@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using smart_meter.application.Service;
 using smart_meter.domain.Interfaces;
 using smart_meter.domain.Interfaces.Services;
@@ -17,14 +19,15 @@ builder.Services.AddControllers(options =>
     options.OutputFormatters.Add(new XmlSerializerOutputFormatter());
 });
 
-
+String connectionString = "";
+                        
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-builder.Services.Configure<MongoDBSettings>(
-builder.Configuration.GetSection("MongoDB"));
+connectionString = builder.Configuration["SQLServer:ConnectionString"];
+builder.Services.AddDbContext<ReadingsDbContext>(options => options.UseSqlServer(connectionString, b => b.MigrationsAssembly("smart-meter.api")));
+builder.Services.AddDbContext<SmartMeterDbContext>(options => options.UseSqlServer(connectionString, b => b.MigrationsAssembly("smart-meter.api")));
 
 builder.Services.AddScoped<ISmartMeterRepository, SmartMeterRepository>();
 builder.Services.AddScoped<ISmartMeterService, SmartMeterService>();

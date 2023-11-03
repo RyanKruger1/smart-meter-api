@@ -28,7 +28,6 @@ namespace smart_meter.api.Controllers
             applicationReading.power = reading.power;
             applicationReading.powerFactor = reading.powerFactor;
 
-
             _readingService.saveReading(applicationReading);
             return Ok(applicationReading);
         }

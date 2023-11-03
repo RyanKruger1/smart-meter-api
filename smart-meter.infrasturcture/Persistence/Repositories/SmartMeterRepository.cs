@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using smart_meter.domain.Interfaces;
 using smart_meter.domain.models;
 using smart_meter.domain.models.Settings;
+using System;
 
 namespace smart_meter.infrasturcture.Persistence.Repositories
 {
@@ -12,33 +13,40 @@ namespace smart_meter.infrasturcture.Persistence.Repositories
 
         public readonly IMongoCollection<SmartMeter> _meterStore;
 
-        public SmartMeterRepository(
-    IOptions<MongoDBSettings> testDataSettings)
+        SmartMeterDbContext _context;
+
+        public SmartMeterRepository(SmartMeterDbContext context)
         {
-            var mongoClient = new MongoClient(
-                testDataSettings.Value.ConnectionString);
-
-            var mongoDatabase = mongoClient.GetDatabase(
-                testDataSettings.Value.DatabaseName);
-
-            _meterStore = mongoDatabase.GetCollection<SmartMeter>(
-                testDataSettings.Value.SmartMeterCollectionName);
+            _context = context;
         }
 
+        public void createSmartMeter(SmartMeter smartMeter)
+        {
+            _context.Add(smartMeter);
+            _context.SaveChanges();
+        }
 
-        public SmartMeter getSmartMeter(Guid environment) =>
-        _meterStore.Find(x => x.Id == environment).FirstOrDefault();
+        public void deleteSmartMeter(Guid id)
+        {
+            _context.Remove(getSmartMeter(id));
+            _context.SaveChanges();
+        }
 
-        public IList<SmartMeter> getSmartMeters() =>
-         _meterStore.Find(_ => true).ToList();
+        public SmartMeter getSmartMeter(Guid id)
+        {
+            SmartMeter sm = _context.meters.Where(r => r.Id == id).SingleOrDefault();
+            return sm;
+        }
 
-        public void createSmartMeter(SmartMeter smartMeter) =>
-        _meterStore.InsertOneAsync(smartMeter);
+        public IList<SmartMeter> getSmartMeters()
+        {
+            IList<SmartMeter> sms = _context.meters.ToList();
+            return sms;
+        }
 
-        public void updateSmartMeter(SmartMeter smartMeter) =>
-        _meterStore.ReplaceOne(x => x.Id == smartMeter.Id, smartMeter);
-
-        public void deleteSmartMeter(Guid id) =>
-       _meterStore.DeleteOne(x => x.Id == id);
+        public void updateSmartMeter(SmartMeter smartMeter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

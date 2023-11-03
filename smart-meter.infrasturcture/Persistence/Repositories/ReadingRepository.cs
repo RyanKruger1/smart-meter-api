@@ -13,29 +13,27 @@ namespace smart_meter.infrasturcture.Persistence.Repositories
 {
     public class ReadingRepository : IReadingRepository
     {
-        public readonly IMongoCollection<Reading> _readingStore;
-        public ReadingRepository(
-  IOptions<MongoDBSettings> testDataSettings)
-        {
-            var mongoClient = new MongoClient(
-                testDataSettings.Value.ConnectionString);
+        ReadingsDbContext _context;
 
-            var mongoDatabase = mongoClient.GetDatabase(
-                testDataSettings.Value.DatabaseName);
-
-            _readingStore = mongoDatabase.GetCollection<Reading>(
-                testDataSettings.Value.ReadingsCollectionName);
+        public ReadingRepository(ReadingsDbContext context) { 
+               _context = context;
         }
 
-        public IList<Reading> getReadings(Guid smartMeterId) =>
-        _readingStore.Find(x => x.smartMeterId == smartMeterId).ToList();
-        
+        public void getAllReadings()
+        {
+            throw new NotImplementedException();
+        }
 
-        public void recordReading(Reading r) =>
-        _readingStore.InsertOne(r);
+        public IList<Reading> getReadings(Guid environment)
+        {
+            IList<Reading> readings = _context.readings.Where(r => r.smartMeterId == environment).ToList(); 
+            return readings;
+        }
 
-        public void getAllReadings() =>
-        _readingStore.Find(_ => true).ToList();
-
+        public void recordReading(Reading r)
+        {
+            _context.readings.Add(r);
+            _context.SaveChanges();
+        }
     }
 }

@@ -1,11 +1,15 @@
 version: '3.8'
 services:
-  amidb:
-    image: mongo:latest
-    ports:
-      - 27017:27017
-    volumes:
-      - mongodb-data:/data/db
+  smart-meter-db:
+        image: mcr.microsoft.com/azure-sql-edge
+        container_name: 
+        environment:
+          - ACCEPT_EULA=Y
+          - SA_PASSWORD=ryankruger45
+        ports:
+          - "1433:1433"
+        volumes:
+          - /etc/smdb:/var/opt/mssql/data
    
   sm1:
     build:

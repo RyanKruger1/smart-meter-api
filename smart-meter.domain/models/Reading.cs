@@ -10,9 +10,7 @@ namespace smart_meter.domain.models
 {
     public class Reading
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
+        public int Id { get; set; }
         public Guid smartMeterId { get; set; }
         public DateTime readingTime { get; set; }
         public double voltage { get; set; }

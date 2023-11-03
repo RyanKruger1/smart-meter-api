@@ -1,11 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using smart_meter.api.RequestModels;
 using smart_meter.application.Service;
 using smart_meter.domain.Interfaces;
-using smart_meter.domain.Interfaces.Services;
-using smart_meter.domain.models;
-using smart_meter.infrasturcture.FileSystem;
-using System.Xml;
 
 namespace smart_meter.api.Controllers
 {
