@@ -1,5 +1,5 @@
 # smart-meter api
-Project create as part of the Author's MTECH: Electrical Engineering.
+Project create as part of the Author's ENG: Electrical Engineering in Smart Grid.
 
 This project showcases the interoperability of IoT and IEC6180. IEC 61850 is an electrical engineering standard that advocates for interoperability in the power grid.
 
